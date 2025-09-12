@@ -1,0 +1,9 @@
+.rhap_container {
+  background: #1f2937; /* Tailwind gray-800 */
+  color: white;
+  border-top: 1px solid #374151;
+}
+
+.rhap_play-status--paused .rhap_play-pause-button {
+  color: #10b981; /* Tailwind emerald-500 */
+}
