@@ -36,7 +36,7 @@ const Home = () => {
         <motion.img
           src="/logo-no-bg.png"
           alt="Brand Logo"
-          className="w-80 object-contain"
+          className="w-32 sm:w-44 md:w-56 lg:w-72 object-contain"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}

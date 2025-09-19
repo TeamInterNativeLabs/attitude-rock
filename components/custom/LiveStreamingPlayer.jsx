@@ -10,32 +10,36 @@ const LiveStreamingPlayer = () => {
 
   return (
     <div
-      className="w-full h-screen relative flex flex-col items-center justify-center bg-cover bg-center"
+      className="w-full min-h-screen relative flex flex-col items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: `url('/live-bg.jpg')` }}
     >
       {/* Background Overlay */}
       <div className="absolute inset-0 bg-black opacity-90 z-0" />
 
       {/* Main Content */}
-      <div className="z-30 flex flex-col items-center">
+      <div className="z-30 flex flex-col items-center px-4">
         {/* Album Info */}
-        <div className="mb-32 text-center">
+        <div className="mb-16 sm:mb-24 md:mb-32 text-center">
           <img
             src="/logo-no-bg.png"
             alt="Album Art"
-            className="w-28 h-28 object-cover mx-auto mb-4 rounded-full border-4 border-cyan-400"
+            className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-cover mx-auto mb-4 rounded-full border-2 sm:border-4 border-cyan-400"
           />
-          <h1 className="text-2xl font-bold text-cyan-300">LIVE STREAM</h1>
-          <p className="text-sm text-gray-400">Rock with an Attitude</p>
+          <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-cyan-300">
+            LIVE STREAM
+          </h1>
+          <p className="text-xs sm:text-sm text-gray-400">
+            Rock with an Attitude
+          </p>
         </div>
 
         {/* Equalizer Bars */}
-        <div className="flex items-end justify-center w-full h-32 gap-[6px] px-4 mb-10">
+        <div className="flex items-end justify-center w-full h-20 sm:h-28 md:h-32 gap-[3px] sm:gap-[5px] md:gap-[6px] px-2 sm:px-4 mb-6 sm:mb-10">
           {bars.map((_, i) =>
             isPlaying ? (
               <motion.div
                 key={i}
-                className="w-2 h-full rounded-sm origin-bottom"
+                className="w-[2px] sm:w-1.5 md:w-2 h-full rounded-sm origin-bottom"
                 style={{
                   background:
                     "linear-gradient(180deg, #00f0ff 0%, #ff00c8 100%)",
@@ -55,7 +59,7 @@ const LiveStreamingPlayer = () => {
             ) : (
               <div
                 key={i}
-                className="w-2 h-full rounded-sm origin-bottom bg-gray-700"
+                className="w-[2px] sm:w-1.5 md:w-2 h-full rounded-sm origin-bottom bg-gray-700"
               />
             )
           )}
@@ -67,7 +71,7 @@ const LiveStreamingPlayer = () => {
           whileTap={{ scale: 0.95 }}
           whileHover={{ scale: 1.05 }}
           onClick={() => setIsPlaying((prev) => !prev)}
-          className={`flex items-center gap-2 px-6 py-3 rounded-full text-lg font-semibold shadow-md transition-all duration-300 
+          className={`flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full text-sm sm:text-base md:text-lg font-semibold shadow-md transition-all duration-300 
             ${
               isPlaying
                 ? "bg-gradient-to-r from-red-600 to-red-800 hover:brightness-110 text-white"

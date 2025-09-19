@@ -14,7 +14,7 @@ export default function CustomCursor() {
 
   return (
     <motion.div
-      className="fixed z-[10000] pointer-events-none flex items-center justify-center"
+      className="hidden sm:flex fixed z-[10000] pointer-events-none items-center justify-center"
       style={{
         top: 0,
         left: 0,
